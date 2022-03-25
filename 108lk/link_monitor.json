@@ -1,0 +1,5182 @@
+{
+  "header_types" : [
+    {
+      "name" : "scalars_0",
+      "id" : 0,
+      "fields" : [
+        ["tmp_2", 32, false],
+        ["tmp_3", 32, false],
+        ["tmp_4", 32, false],
+        ["tmp_5", 32, false],
+        ["tmp_6", 32, false],
+        ["tmp_7", 32, false],
+        ["cg_0", 32, false],
+        ["twop_0", 32, false],
+        ["contpp_0", 32, false],
+        ["tmp", 32, false],
+        ["tmp_8", 32, false],
+        ["tmp_9", 32, false],
+        ["tmp_10", 32, false],
+        ["tmp_11", 32, false],
+        ["tmp_12", 32, false],
+        ["tmp_13", 32, false],
+        ["encontpp_0", 32, false],
+        ["byte_cnt_0", 32, false],
+        ["last_time_0", 48, false],
+        ["tmp_0", 32, false],
+        ["tmp_1", 32, false],
+        ["userMetadata._egress_spec0", 8, false],
+        ["userMetadata._parser_metadata_remaining1", 8, false],
+        ["userMetadata._tempport2", 9, false],
+        ["userMetadata._tempcount3", 32, false],
+        ["userMetadata._threshold14", 32, false],
+        ["userMetadata._threshold25", 32, false],
+        ["userMetadata._sswid6", 7, false],
+        ["userMetadata._percc7", 8, false],
+        ["userMetadata._pktcont28", 32, false],
+        ["userMetadata._ingress_time9", 48, false]
+      ]
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "fields" : [
+        ["ingress_port", 9, false],
+        ["egress_spec", 9, false],
+        ["egress_port", 9, false],
+        ["instance_type", 32, false],
+        ["packet_length", 32, false],
+        ["enq_timestamp", 32, false],
+        ["enq_qdepth", 19, false],
+        ["deq_timedelta", 32, false],
+        ["deq_qdepth", 19, false],
+        ["ingress_global_timestamp", 48, false],
+        ["egress_global_timestamp", 48, false],
+        ["mcast_grp", 16, false],
+        ["egress_rid", 16, false],
+        ["checksum_error", 1, false],
+        ["parser_error", 32, false],
+        ["priority", 3, false],
+        ["_padding", 3, false]
+      ]
+    },
+    {
+      "name" : "ethernet_t",
+      "id" : 2,
+      "fields" : [
+        ["dstAddr", 48, false],
+        ["srcAddr", 48, false],
+        ["etherType", 16, false]
+      ]
+    },
+    {
+      "name" : "arp_t",
+      "id" : 3,
+      "fields" : [
+        ["hardware_type", 16, false],
+        ["protocol_type", 16, false],
+        ["HLEN", 8, false],
+        ["PLEN", 8, false],
+        ["OPER", 16, false],
+        ["sender_ha", 48, false],
+        ["sender_ip", 32, false],
+        ["target_ha", 48, false],
+        ["target_ip", 32, false]
+      ]
+    },
+    {
+      "name" : "ipv4_t",
+      "id" : 4,
+      "fields" : [
+        ["version", 4, false],
+        ["ihl", 4, false],
+        ["diffserv", 8, false],
+        ["totalLen", 16, false],
+        ["identification", 16, false],
+        ["flags", 3, false],
+        ["fragOffset", 13, false],
+        ["ttl", 8, false],
+        ["protocol", 8, false],
+        ["hdrChecksum", 16, false],
+        ["srcAddr", 32, false],
+        ["dstAddr", 32, false]
+      ]
+    },
+    {
+      "name" : "probe_t",
+      "id" : 5,
+      "fields" : [
+        ["hop_cnt", 8, false],
+        ["learn", 8, false],
+        ["count", 32, false]
+      ]
+    },
+    {
+      "name" : "probe_data_t",
+      "id" : 6,
+      "fields" : [
+        ["bos", 1, false],
+        ["swid", 7, false],
+        ["port", 8, false],
+        ["byte_cnt", 32, false],
+        ["pckcont", 32, false],
+        ["enpckcont", 32, false],
+        ["ingress_time", 48, false],
+        ["last_time", 48, false],
+        ["egress_time", 48, false],
+        ["qdepth", 32, false]
+      ]
+    },
+    {
+      "name" : "probe_fwd_t",
+      "id" : 7,
+      "fields" : [
+        ["egress_spec", 8, false],
+        ["swid", 8, false],
+        ["percent", 8, false]
+      ]
+    }
+  ],
+  "headers" : [
+    {
+      "name" : "scalars",
+      "id" : 0,
+      "header_type" : "scalars_0",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "header_type" : "standard_metadata",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ethernet",
+      "id" : 2,
+      "header_type" : "ethernet_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "arp",
+      "id" : 3,
+      "header_type" : "arp_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ipv4",
+      "id" : 4,
+      "header_type" : "ipv4_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "probe",
+      "id" : 5,
+      "header_type" : "probe_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "probe_data[0]",
+      "id" : 6,
+      "header_type" : "probe_data_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "probe_data[1]",
+      "id" : 7,
+      "header_type" : "probe_data_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "probe_data[2]",
+      "id" : 8,
+      "header_type" : "probe_data_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "probe_data[3]",
+      "id" : 9,
+      "header_type" : "probe_data_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "probe_data[4]",
+      "id" : 10,
+      "header_type" : "probe_data_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "probe_data[5]",
+      "id" : 11,
+      "header_type" : "probe_data_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "probe_data[6]",
+      "id" : 12,
+      "header_type" : "probe_data_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "probe_data[7]",
+      "id" : 13,
+      "header_type" : "probe_data_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "probe_data[8]",
+      "id" : 14,
+      "header_type" : "probe_data_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "probe_data[9]",
+      "id" : 15,
+      "header_type" : "probe_data_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "probe_fwd[0]",
+      "id" : 16,
+      "header_type" : "probe_fwd_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "probe_fwd[1]",
+      "id" : 17,
+      "header_type" : "probe_fwd_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "probe_fwd[2]",
+      "id" : 18,
+      "header_type" : "probe_fwd_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "probe_fwd[3]",
+      "id" : 19,
+      "header_type" : "probe_fwd_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "probe_fwd[4]",
+      "id" : 20,
+      "header_type" : "probe_fwd_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "probe_fwd[5]",
+      "id" : 21,
+      "header_type" : "probe_fwd_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "probe_fwd[6]",
+      "id" : 22,
+      "header_type" : "probe_fwd_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "probe_fwd[7]",
+      "id" : 23,
+      "header_type" : "probe_fwd_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "probe_fwd[8]",
+      "id" : 24,
+      "header_type" : "probe_fwd_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "probe_fwd[9]",
+      "id" : 25,
+      "header_type" : "probe_fwd_t",
+      "metadata" : false,
+      "pi_omit" : true
+    }
+  ],
+  "header_stacks" : [
+    {
+      "name" : "probe_data",
+      "id" : 0,
+      "header_type" : "probe_data_t",
+      "size" : 10,
+      "header_ids" : [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    },
+    {
+      "name" : "probe_fwd",
+      "id" : 1,
+      "header_type" : "probe_fwd_t",
+      "size" : 10,
+      "header_ids" : [16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+    }
+  ],
+  "header_union_types" : [],
+  "header_unions" : [],
+  "header_union_stacks" : [],
+  "field_lists" : [],
+  "errors" : [
+    ["NoError", 0],
+    ["PacketTooShort", 1],
+    ["NoMatch", 2],
+    ["StackOutOfBounds", 3],
+    ["HeaderTooShort", 4],
+    ["ParserTimeout", 5],
+    ["ParserInvalidArgument", 6]
+  ],
+  "enums" : [],
+  "parsers" : [
+    {
+      "name" : "parser",
+      "id" : 0,
+      "init_state" : "start",
+      "parse_states" : [
+        {
+          "name" : "start",
+          "id" : 0,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ethernet"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x0806",
+              "mask" : null,
+              "next_state" : "parse_arp"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0800",
+              "mask" : null,
+              "next_state" : "parse_ipv4"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0812",
+              "mask" : null,
+              "next_state" : "parse_probe"
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "etherType"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_ipv4",
+          "id" : 1,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ipv4"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        },
+        {
+          "name" : "parse_probe",
+          "id" : 2,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "probe"
+                }
+              ],
+              "op" : "extract"
+            },
+            {
+              "parameters" : [
+                {
+                  "type" : "field",
+                  "value" : ["scalars", "userMetadata._parser_metadata_remaining1"]
+                },
+                {
+                  "type" : "expression",
+                  "value" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "+",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["probe", "hop_cnt"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x01"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xff"
+                      }
+                    }
+                  }
+                }
+              ],
+              "op" : "set"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x00",
+              "mask" : null,
+              "next_state" : "parse_probe_fwd"
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : "parse_probe_data"
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["probe", "hop_cnt"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_arp",
+          "id" : 3,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "arp"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        },
+        {
+          "name" : "parse_probe_data",
+          "id" : 4,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "stack",
+                  "value" : "probe_data"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x01",
+              "mask" : null,
+              "next_state" : "parse_probe_fwd"
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : "parse_probe_data"
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "stack_field",
+              "value" : ["probe_data", "bos"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_probe_fwd",
+          "id" : 5,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "stack",
+                  "value" : "probe_fwd"
+                }
+              ],
+              "op" : "extract"
+            },
+            {
+              "parameters" : [
+                {
+                  "type" : "field",
+                  "value" : ["scalars", "userMetadata._parser_metadata_remaining1"]
+                },
+                {
+                  "type" : "expression",
+                  "value" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "+",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "userMetadata._parser_metadata_remaining1"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xff"
+                      }
+                    }
+                  }
+                }
+              ],
+              "op" : "set"
+            },
+            {
+              "parameters" : [
+                {
+                  "type" : "field",
+                  "value" : ["scalars", "userMetadata._egress_spec0"]
+                },
+                {
+                  "type" : "expression",
+                  "value" : {
+                    "type" : "stack_field",
+                    "value" : ["probe_fwd", "egress_spec"]
+                  }
+                }
+              ],
+              "op" : "set"
+            },
+            {
+              "parameters" : [
+                {
+                  "type" : "field",
+                  "value" : ["scalars", "userMetadata._percc7"]
+                },
+                {
+                  "type" : "expression",
+                  "value" : {
+                    "type" : "stack_field",
+                    "value" : ["probe_fwd", "percent"]
+                  }
+                }
+              ],
+              "op" : "set"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x00",
+              "mask" : null,
+              "next_state" : null
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : "parse_probe_fwd"
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata._parser_metadata_remaining1"]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "parse_vsets" : [],
+  "deparsers" : [
+    {
+      "name" : "deparser",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "link_monitor.p4",
+        "line" : 546,
+        "column" : 8,
+        "source_fragment" : "MyDeparser"
+      },
+      "order" : ["ethernet", "ipv4", "probe", "probe_data[0]", "probe_data[1]", "probe_data[2]", "probe_data[3]", "probe_data[4]", "probe_data[5]", "probe_data[6]", "probe_data[7]", "probe_data[8]", "probe_data[9]", "probe_fwd[0]", "probe_fwd[1]", "probe_fwd[2]", "probe_fwd[3]", "probe_fwd[4]", "probe_fwd[5]", "probe_fwd[6]", "probe_fwd[7]", "probe_fwd[8]", "probe_fwd[9]"],
+      "primitives" : []
+    }
+  ],
+  "meter_arrays" : [],
+  "counter_arrays" : [],
+  "register_arrays" : [
+    {
+      "name" : "MyIngress.count",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "link_monitor.p4",
+        "line" : 223,
+        "column" : 28,
+        "source_fragment" : "count"
+      },
+      "size" : 10,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "MyIngress.threshold",
+      "id" : 1,
+      "source_info" : {
+        "filename" : "link_monitor.p4",
+        "line" : 224,
+        "column" : 28,
+        "source_fragment" : "threshold"
+      },
+      "size" : 10,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "MyIngress.contpkts",
+      "id" : 2,
+      "source_info" : {
+        "filename" : "link_monitor.p4",
+        "line" : 225,
+        "column" : 25,
+        "source_fragment" : "contpkts"
+      },
+      "size" : 8,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "MyEgress.byte_cnt_reg",
+      "id" : 3,
+      "source_info" : {
+        "filename" : "link_monitor.p4",
+        "line" : 455,
+        "column" : 25,
+        "source_fragment" : "byte_cnt_reg"
+      },
+      "size" : 8,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "MyEgress.last_time_reg",
+      "id" : 4,
+      "source_info" : {
+        "filename" : "link_monitor.p4",
+        "line" : 457,
+        "column" : 24,
+        "source_fragment" : "last_time_reg"
+      },
+      "size" : 8,
+      "bitwidth" : 48
+    },
+    {
+      "name" : "MyEgress.encontpkts",
+      "id" : 5,
+      "source_info" : {
+        "filename" : "link_monitor.p4",
+        "line" : 458,
+        "column" : 25,
+        "source_fragment" : "encontpkts"
+      },
+      "size" : 8,
+      "bitwidth" : 32
+    }
+  ],
+  "calculations" : [
+    {
+      "name" : "calc",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "link_monitor.p4",
+        "line" : 522,
+        "column" : 8,
+        "source_fragment" : "update_checksum( ..."
+      },
+      "algo" : "csum16",
+      "input" : [
+        {
+          "type" : "field",
+          "value" : ["ipv4", "version"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "ihl"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "diffserv"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "totalLen"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "identification"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "flags"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "fragOffset"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "ttl"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "protocol"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "srcAddr"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "dstAddr"]
+        }
+      ]
+    }
+  ],
+  "learn_lists" : [],
+  "actions" : [
+    {
+      "name" : "NoAction",
+      "id" : 0,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 1,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 2,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 3,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "MyIngress.drop",
+      "id" : 4,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 229,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.drop",
+      "id" : 5,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 229,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.drop",
+      "id" : 6,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 229,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.ipv4_forward",
+      "id" : 7,
+      "runtime_data" : [
+        {
+          "name" : "dstAddr",
+          "bitwidth" : 48
+        },
+        {
+          "name" : "port",
+          "bitwidth" : 9
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 1
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 234,
+            "column" : 8,
+            "source_fragment" : "standard_metadata.egress_spec = port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "srcAddr"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ethernet", "dstAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 235,
+            "column" : 8,
+            "source_fragment" : "hdr.ethernet.srcAddr = hdr.ethernet.dstAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "dstAddr"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 236,
+            "column" : 8,
+            "source_fragment" : "hdr.ethernet.dstAddr = dstAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "ttl"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["ipv4", "ttl"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 237,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.ttl = hdr.ipv4.ttl - 1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.ipv4_forward1",
+      "id" : 8,
+      "runtime_data" : [
+        {
+          "name" : "dstAddr",
+          "bitwidth" : 48
+        },
+        {
+          "name" : "port",
+          "bitwidth" : 9
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 1
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 241,
+            "column" : 8,
+            "source_fragment" : "standard_metadata.egress_spec = port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "srcAddr"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ethernet", "dstAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 242,
+            "column" : 8,
+            "source_fragment" : "hdr.ethernet.srcAddr = hdr.ethernet.dstAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "dstAddr"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 243,
+            "column" : 8,
+            "source_fragment" : "hdr.ethernet.dstAddr = dstAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "ttl"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["ipv4", "ttl"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 244,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.ttl = hdr.ipv4.ttl - 1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.ipv4_forward2",
+      "id" : 9,
+      "runtime_data" : [
+        {
+          "name" : "dstAddr",
+          "bitwidth" : 48
+        },
+        {
+          "name" : "port",
+          "bitwidth" : 9
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 1
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 248,
+            "column" : 8,
+            "source_fragment" : "standard_metadata.egress_spec = port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "srcAddr"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ethernet", "dstAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 249,
+            "column" : 8,
+            "source_fragment" : "hdr.ethernet.srcAddr = hdr.ethernet.dstAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "dstAddr"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 250,
+            "column" : 8,
+            "source_fragment" : "hdr.ethernet.dstAddr = dstAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "ttl"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["ipv4", "ttl"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 251,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.ttl = hdr.ipv4.ttl - 1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.set_swid",
+      "id" : 10,
+      "runtime_data" : [
+        {
+          "name" : "swid",
+          "bitwidth" : 7
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata._sswid6"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 298,
+            "column" : 8,
+            "source_fragment" : "meta.sswid = swid"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor323",
+      "id" : 11,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "dstAddr"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ethernet", "srcAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 323,
+            "column" : 16,
+            "source_fragment" : "hdr.ethernet.dstAddr = hdr.ethernet.srcAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "srcAddr"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x3448edf8f343"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 324,
+            "column" : 16,
+            "source_fragment" : "hdr.ethernet.srcAddr = 0x3448edf8f343"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["arp", "OPER"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0002"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 325,
+            "column" : 16,
+            "source_fragment" : "hdr.arp.OPER = 2"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["arp", "target_ha"]
+            },
+            {
+              "type" : "field",
+              "value" : ["arp", "sender_ha"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 326,
+            "column" : 16,
+            "source_fragment" : "hdr.arp.target_ha = hdr.arp.sender_ha"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["arp", "target_ip"]
+            },
+            {
+              "type" : "field",
+              "value" : ["arp", "sender_ip"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 327,
+            "column" : 16,
+            "source_fragment" : "hdr.arp.target_ip = hdr.arp.sender_ip"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["arp", "sender_ip"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0aa8c651"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 328,
+            "column" : 16,
+            "source_fragment" : "hdr.arp.sender_ip = 0x0aa8c651"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["arp", "sender_ha"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x3448edf8f343"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 329,
+            "column" : 16,
+            "source_fragment" : "hdr.arp.sender_ha = 0x3448edf8f343"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "ingress_port"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 330,
+            "column" : 16,
+            "source_fragment" : "standard_metadata.egress_spec = standard_metadata.ingress_port"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor335",
+      "id" : 12,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "dstAddr"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ethernet", "srcAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 335,
+            "column" : 16,
+            "source_fragment" : "hdr.ethernet.dstAddr = hdr.ethernet.srcAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "srcAddr"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0xb026289ce306"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 336,
+            "column" : 16,
+            "source_fragment" : "hdr.ethernet.srcAddr = 0xb026289ce306"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["arp", "OPER"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0002"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 337,
+            "column" : 16,
+            "source_fragment" : "hdr.arp.OPER = 2"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["arp", "target_ha"]
+            },
+            {
+              "type" : "field",
+              "value" : ["arp", "sender_ha"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 338,
+            "column" : 16,
+            "source_fragment" : "hdr.arp.target_ha = hdr.arp.sender_ha"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["arp", "target_ip"]
+            },
+            {
+              "type" : "field",
+              "value" : ["arp", "sender_ip"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 339,
+            "column" : 16,
+            "source_fragment" : "hdr.arp.target_ip = hdr.arp.sender_ip"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["arp", "sender_ip"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0aa8c750"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 340,
+            "column" : 16,
+            "source_fragment" : "hdr.arp.sender_ip = 0x0aa8c750"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["arp", "sender_ha"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0xb026289ce306"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 341,
+            "column" : 16,
+            "source_fragment" : "hdr.arp.sender_ha = 0xb026289ce306"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "ingress_port"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 342,
+            "column" : 16,
+            "source_fragment" : "standard_metadata.egress_spec = standard_metadata.ingress_port"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor353",
+      "id" : 13,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 353,
+            "column" : 23,
+            "source_fragment" : "(hdr.probe.isValid()) ? 0 : contpp"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor353_0",
+      "id" : 14,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "contpp_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 353,
+            "column" : 23,
+            "source_fragment" : "(hdr.probe.isValid()) ? 0 : contpp"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor349",
+      "id" : 15,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_2"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "ingress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 349,
+            "column" : 34,
+            "source_fragment" : "(bit<32>)standard_metadata.ingress_port"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "contpp_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.contpkts"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_2"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 349,
+            "column" : 12,
+            "source_fragment" : "contpkts.read(contpp, (bit<32>)standard_metadata.ingress_port)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "contpp_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "contpp_0"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x00000001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 350,
+            "column" : 12,
+            "source_fragment" : "contpp = contpp + 1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata._pktcont28"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "contpp_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 351,
+            "column" : 12,
+            "source_fragment" : "meta.pktcont2=contpp"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor364",
+      "id" : 16,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata._threshold14"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0000001e"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 364,
+            "column" : 16,
+            "source_fragment" : "meta.threshold1=(bit<32>)30"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata._threshold25"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000064"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 365,
+            "column" : 16,
+            "source_fragment" : "meta.threshold2=(bit<32>)100"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.threshold"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0000001e"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 366,
+            "column" : 16,
+            "source_fragment" : "threshold.write(0,meta.threshold1)"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.threshold"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000001"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000064"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 367,
+            "column" : 16,
+            "source_fragment" : "threshold.write(1,meta.threshold2)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor354",
+      "id" : 17,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_3"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "ingress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 354,
+            "column" : 27,
+            "source_fragment" : "(bit<32>)standard_metadata.ingress_port"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.contpkts"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_3"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 354,
+            "column" : 12,
+            "source_fragment" : "contpkts.write((bit<32>)standard_metadata.ingress_port, new_cont)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata._ingress_time9"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "ingress_global_timestamp"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 356,
+            "column" : 3,
+            "source_fragment" : "meta.ingress_time=standard_metadata.ingress_global_timestamp"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata._threshold14"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.threshold"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 360,
+            "column" : 12,
+            "source_fragment" : "threshold.read(meta.threshold1,(bit<32>)0)"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata._threshold25"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.threshold"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000001"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 361,
+            "column" : 12,
+            "source_fragment" : "threshold.read(meta.threshold2,(bit<32>)1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor376",
+      "id" : 18,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_4"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "userMetadata._percc7"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 376,
+            "column" : 38,
+            "source_fragment" : "(bit<32>)meta.percc"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.threshold"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_4"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 376,
+            "column" : 20,
+            "source_fragment" : "threshold.write(0,(bit<32>)meta.percc)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor372",
+      "id" : 19,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "userMetadata._egress_spec0"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x01ff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 372,
+            "column" : 16,
+            "source_fragment" : "standard_metadata.egress_spec = (bit<9>)meta.egress_spec"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["probe", "hop_cnt"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["probe", "hop_cnt"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x01"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 373,
+            "column" : 16,
+            "source_fragment" : "hdr.probe.hop_cnt = hdr.probe.hop_cnt + 1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor388",
+      "id" : 20,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "twop_0"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata._threshold14"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 388,
+            "column" : 20,
+            "source_fragment" : "twop=meta"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor392",
+      "id" : 21,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "twop_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "-",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata._threshold25"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata._threshold14"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 392,
+            "column" : 20,
+            "source_fragment" : "twop=meta.threshold2-meta.threshold1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor382",
+      "id" : 22,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "cg_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.count"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 382,
+            "column" : 16,
+            "source_fragment" : "count.read(cg,(bit<32>)0)"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata._tempcount3"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.count"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000001"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 383,
+            "column" : 16,
+            "source_fragment" : "count.read(meta.tempcount,(bit<32>)1)"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata._threshold14"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.threshold"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 384,
+            "column" : 16,
+            "source_fragment" : "threshold.read(meta.threshold1,(bit<32>)0)"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata._threshold25"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.threshold"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000001"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 385,
+            "column" : 16,
+            "source_fragment" : "threshold.read(meta.threshold2,(bit<32>)1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor398",
+      "id" : 23,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata._tempport2"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0001"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 398,
+            "column" : 24,
+            "source_fragment" : "meta.tempport = 1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "cg_0"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000001"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 399,
+            "column" : 24,
+            "source_fragment" : "cg=1"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.count"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000001"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 401,
+            "column" : 24,
+            "source_fragment" : "count.write((bit<32>)0,cg)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_5"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata._tempcount3"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x00000001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 402,
+            "column" : 47,
+            "source_fragment" : "meta.tempcount+1"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.count"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000001"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_5"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 402,
+            "column" : 24,
+            "source_fragment" : "count.write((bit<32>)1,meta.tempcount+1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor406",
+      "id" : 24,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata._tempport2"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0002"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 406,
+            "column" : 24,
+            "source_fragment" : "meta.tempport = 2"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "cg_0"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 407,
+            "column" : 24,
+            "source_fragment" : "cg=0"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.count"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 408,
+            "column" : 24,
+            "source_fragment" : "count.write((bit<32>)0,cg)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor415",
+      "id" : 25,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata._tempport2"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0001"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 415,
+            "column" : 20,
+            "source_fragment" : "meta.tempport = 1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_6"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata._tempcount3"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x00000001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 416,
+            "column" : 43,
+            "source_fragment" : "meta.tempcount+1"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.count"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000001"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_6"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 416,
+            "column" : 20,
+            "source_fragment" : "count.write((bit<32>)1,meta.tempcount+1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor420",
+      "id" : 26,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata._tempport2"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0002"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 420,
+            "column" : 20,
+            "source_fragment" : "meta.tempport = 2"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_7"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata._tempcount3"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x00000001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 421,
+            "column" : 43,
+            "source_fragment" : "meta.tempcount+1"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.count"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000001"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_7"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 421,
+            "column" : 20,
+            "source_fragment" : "count.write((bit<32>)1,meta.tempcount+1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor425",
+      "id" : 27,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.count"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 425,
+            "column" : 20,
+            "source_fragment" : "count.write((bit<32>)0,(bit<32>)0)"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.count"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000001"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 426,
+            "column" : 20,
+            "source_fragment" : "count.write((bit<32>)1,(bit<32>)0)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor469",
+      "id" : 28,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_0"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 469,
+            "column" : 21,
+            "source_fragment" : "(hdr.probe.isValid()) ? 0 : encontpp"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor469_0",
+      "id" : 29,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_0"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "encontpp_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 469,
+            "column" : 21,
+            "source_fragment" : "(hdr.probe.isValid()) ? 0 : encontpp"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor466",
+      "id" : 30,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_8"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 466,
+            "column" : 34,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_port"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "encontpp_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyEgress.encontpkts"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_8"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 466,
+            "column" : 8,
+            "source_fragment" : "encontpkts.read(encontpp, (bit<32>)standard_metadata.egress_port)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "encontpp_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "encontpp_0"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x00000001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 467,
+            "column" : 8,
+            "source_fragment" : "encontpp = encontpp + 1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor481",
+      "id" : 31,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_1"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 481,
+            "column" : 23,
+            "source_fragment" : "(hdr.probe.isValid()) ? 0 : byte_cnt"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor481_0",
+      "id" : 32,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_1"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "byte_cnt_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 481,
+            "column" : 23,
+            "source_fragment" : "(hdr.probe.isValid()) ? 0 : byte_cnt"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor470",
+      "id" : 33,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_9"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 470,
+            "column" : 25,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_port"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyEgress.encontpkts"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_9"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 470,
+            "column" : 8,
+            "source_fragment" : "encontpkts.write((bit<32>)standard_metadata.egress_port, new_encont)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_10"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 478,
+            "column" : 36,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_port"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "byte_cnt_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyEgress.byte_cnt_reg"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_10"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 478,
+            "column" : 8,
+            "source_fragment" : "byte_cnt_reg.read(byte_cnt, (bit<32>)standard_metadata.egress_port)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "byte_cnt_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "byte_cnt_0"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["standard_metadata", "packet_length"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 479,
+            "column" : 8,
+            "source_fragment" : "byte_cnt = byte_cnt + standard_metadata.packet_length"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor491",
+      "id" : 34,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["probe_data[0]", "bos"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 491,
+            "column" : 16,
+            "source_fragment" : "hdr.probe_data[0].bos = 1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor495",
+      "id" : 35,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["probe_data[0]", "bos"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 495,
+            "column" : 16,
+            "source_fragment" : "hdr.probe_data[0].bos = 0"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor487",
+      "id" : 36,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "push",
+          "parameters" : [
+            {
+              "type" : "header_stack",
+              "value" : "probe_data"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x1"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 487,
+            "column" : 12,
+            "source_fragment" : "hdr.probe_data.push_front(1)"
+          }
+        },
+        {
+          "op" : "add_header",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "probe_data[0]"
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 488,
+            "column" : 12,
+            "source_fragment" : "hdr.probe_data[0].setValid()"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor498",
+      "id" : 37,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["probe_data[0]", "swid"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata._sswid6"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 498,
+            "column" : 12,
+            "source_fragment" : "hdr.probe_data[0].swid=(bit<7>)meta"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["probe_data[0]", "port"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 499,
+            "column" : 12,
+            "source_fragment" : "hdr.probe_data[0].port = (bit<8>)standard_metadata.egress_port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["probe_data[0]", "byte_cnt"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "byte_cnt_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 500,
+            "column" : 12,
+            "source_fragment" : "hdr.probe_data[0].byte_cnt = byte_cnt"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["probe_data[0]", "pckcont"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata._pktcont28"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 501,
+            "column" : 12,
+            "source_fragment" : "hdr.probe_data[0].pckcont =meta"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["probe_data[0]", "enpckcont"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "encontpp_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 502,
+            "column" : 12,
+            "source_fragment" : "hdr.probe_data[0].enpckcont =encontpp"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_11"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 504,
+            "column" : 42,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_port"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "last_time_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyEgress.last_time_reg"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_11"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 504,
+            "column" : 12,
+            "source_fragment" : "last_time_reg.read(last_time, (bit<32>)standard_metadata.egress_port)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_12"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 505,
+            "column" : 32,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_port"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyEgress.last_time_reg"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_12"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_global_timestamp"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 505,
+            "column" : 12,
+            "source_fragment" : "last_time_reg.write((bit<32>)standard_metadata.egress_port, egress_time)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["probe_data[0]", "ingress_time"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata._ingress_time9"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 506,
+            "column" : 3,
+            "source_fragment" : "hdr.probe_data[0].ingress_time=meta"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["probe_data[0]", "last_time"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "last_time_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 507,
+            "column" : 12,
+            "source_fragment" : "hdr.probe_data[0].last_time = last_time"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["probe_data[0]", "egress_time"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_global_timestamp"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 476,
+            "column" : 29,
+            "source_fragment" : "standard_metadata.egress_global_timestamp; ..."
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["probe_data[0]", "qdepth"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "deq_qdepth"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 509,
+            "column" : 12,
+            "source_fragment" : "hdr.probe_data[0].qdepth = (bit<32>)standard_metadata.deq_qdepth"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "link_monitor482",
+      "id" : 38,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_13"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 482,
+            "column" : 27,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_port"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyEgress.byte_cnt_reg"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_13"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_1"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 482,
+            "column" : 8,
+            "source_fragment" : "byte_cnt_reg.write((bit<32>)standard_metadata.egress_port, new_byte_cnt)"
+          }
+        }
+      ]
+    }
+  ],
+  "pipelines" : [
+    {
+      "name" : "ingress",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "link_monitor.p4",
+        "line" : 219,
+        "column" : 8,
+        "source_fragment" : "MyIngress"
+      },
+      "init_table" : "node_2",
+      "tables" : [
+        {
+          "name" : "tbl_link_monitor323",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 323,
+            "column" : 37,
+            "source_fragment" : "= hdr.ethernet.srcAddr; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [11],
+          "actions" : ["link_monitor323"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "link_monitor323" : null
+          },
+          "default_entry" : {
+            "action_id" : 11,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor335",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 335,
+            "column" : 37,
+            "source_fragment" : "= hdr.ethernet.srcAddr; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [12],
+          "actions" : ["link_monitor335"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "link_monitor335" : null
+          },
+          "default_entry" : {
+            "action_id" : 12,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor349",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 349,
+            "column" : 12,
+            "source_fragment" : "contpkts.read(contpp, (bit<32>)standard_metadata.ingress_port); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [15],
+          "actions" : ["link_monitor349"],
+          "base_default_next" : "node_8",
+          "next_tables" : {
+            "link_monitor349" : "node_8"
+          },
+          "default_entry" : {
+            "action_id" : 15,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor353",
+          "id" : 3,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 353,
+            "column" : 23,
+            "source_fragment" : "(hdr.probe.isValid()) ? 0 : contpp"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [13],
+          "actions" : ["link_monitor353"],
+          "base_default_next" : "tbl_link_monitor354",
+          "next_tables" : {
+            "link_monitor353" : "tbl_link_monitor354"
+          },
+          "default_entry" : {
+            "action_id" : 13,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor353_0",
+          "id" : 4,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 353,
+            "column" : 23,
+            "source_fragment" : "(hdr.probe.isValid()) ? 0 : contpp"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [14],
+          "actions" : ["link_monitor353_0"],
+          "base_default_next" : "tbl_link_monitor354",
+          "next_tables" : {
+            "link_monitor353_0" : "tbl_link_monitor354"
+          },
+          "default_entry" : {
+            "action_id" : 14,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor354",
+          "id" : 5,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 354,
+            "column" : 12,
+            "source_fragment" : "contpkts.write((bit<32>)standard_metadata.ingress_port, new_cont); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [17],
+          "actions" : ["link_monitor354"],
+          "base_default_next" : "node_12",
+          "next_tables" : {
+            "link_monitor354" : "node_12"
+          },
+          "default_entry" : {
+            "action_id" : 17,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor364",
+          "id" : 6,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 364,
+            "column" : 31,
+            "source_fragment" : "=(bit<32>)30; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [16],
+          "actions" : ["link_monitor364"],
+          "base_default_next" : "MyIngress.swid",
+          "next_tables" : {
+            "link_monitor364" : "MyIngress.swid"
+          },
+          "default_entry" : {
+            "action_id" : 16,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "MyIngress.swid",
+          "id" : 7,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 301,
+            "column" : 10,
+            "source_fragment" : "swid"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [10, 3],
+          "actions" : ["MyIngress.set_swid", "NoAction"],
+          "base_default_next" : "node_15",
+          "next_tables" : {
+            "MyIngress.set_swid" : "node_15",
+            "NoAction" : "node_15"
+          },
+          "default_entry" : {
+            "action_id" : 3,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "tbl_link_monitor372",
+          "id" : 8,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 372,
+            "column" : 46,
+            "source_fragment" : "= (bit<9>)meta.egress_spec; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [19],
+          "actions" : ["link_monitor372"],
+          "base_default_next" : "node_17",
+          "next_tables" : {
+            "link_monitor372" : "node_17"
+          },
+          "default_entry" : {
+            "action_id" : 19,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor376",
+          "id" : 9,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 376,
+            "column" : 20,
+            "source_fragment" : "threshold.write(0,(bit<32>)meta.percc)"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [18],
+          "actions" : ["link_monitor376"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "link_monitor376" : null
+          },
+          "default_entry" : {
+            "action_id" : 18,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor382",
+          "id" : 10,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 382,
+            "column" : 16,
+            "source_fragment" : "count.read(cg,(bit<32>)0); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [22],
+          "actions" : ["link_monitor382"],
+          "base_default_next" : "node_21",
+          "next_tables" : {
+            "link_monitor382" : "node_21"
+          },
+          "default_entry" : {
+            "action_id" : 22,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor388",
+          "id" : 11,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 388,
+            "column" : 24,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [20],
+          "actions" : ["link_monitor388"],
+          "base_default_next" : "node_24",
+          "next_tables" : {
+            "link_monitor388" : "node_24"
+          },
+          "default_entry" : {
+            "action_id" : 20,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor392",
+          "id" : 12,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 392,
+            "column" : 24,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [21],
+          "actions" : ["link_monitor392"],
+          "base_default_next" : "node_24",
+          "next_tables" : {
+            "link_monitor392" : "node_24"
+          },
+          "default_entry" : {
+            "action_id" : 21,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor398",
+          "id" : 13,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 398,
+            "column" : 38,
+            "source_fragment" : "= 1; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [23],
+          "actions" : ["link_monitor398"],
+          "base_default_next" : "node_32",
+          "next_tables" : {
+            "link_monitor398" : "node_32"
+          },
+          "default_entry" : {
+            "action_id" : 23,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor406",
+          "id" : 14,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 406,
+            "column" : 38,
+            "source_fragment" : "= 2; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [24],
+          "actions" : ["link_monitor406"],
+          "base_default_next" : "node_32",
+          "next_tables" : {
+            "link_monitor406" : "node_32"
+          },
+          "default_entry" : {
+            "action_id" : 24,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor415",
+          "id" : 15,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 415,
+            "column" : 34,
+            "source_fragment" : "= 1; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [25],
+          "actions" : ["link_monitor415"],
+          "base_default_next" : "node_32",
+          "next_tables" : {
+            "link_monitor415" : "node_32"
+          },
+          "default_entry" : {
+            "action_id" : 25,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor420",
+          "id" : 16,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 420,
+            "column" : 34,
+            "source_fragment" : "= 2; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [26],
+          "actions" : ["link_monitor420"],
+          "base_default_next" : "node_32",
+          "next_tables" : {
+            "link_monitor420" : "node_32"
+          },
+          "default_entry" : {
+            "action_id" : 26,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor425",
+          "id" : 17,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 425,
+            "column" : 20,
+            "source_fragment" : "count.write((bit<32>)0,(bit<32>)0); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [27],
+          "actions" : ["link_monitor425"],
+          "base_default_next" : "node_34",
+          "next_tables" : {
+            "link_monitor425" : "node_34"
+          },
+          "default_entry" : {
+            "action_id" : 27,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "MyIngress.ipv4_lpm1",
+          "id" : 18,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 268,
+            "column" : 10,
+            "source_fragment" : "ipv4_lpm1"
+          },
+          "key" : [
+            {
+              "match_type" : "lpm",
+              "name" : "hdr.ipv4.dstAddr",
+              "target" : ["ipv4", "dstAddr"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "lpm",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [8, 5, 1],
+          "actions" : ["MyIngress.ipv4_forward1", "MyIngress.drop", "NoAction"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyIngress.ipv4_forward1" : null,
+            "MyIngress.drop" : null,
+            "NoAction" : null
+          },
+          "default_entry" : {
+            "action_id" : 5,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.ipv4_lpm2",
+          "id" : 19,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 282,
+            "column" : 10,
+            "source_fragment" : "ipv4_lpm2"
+          },
+          "key" : [
+            {
+              "match_type" : "lpm",
+              "name" : "hdr.ipv4.dstAddr",
+              "target" : ["ipv4", "dstAddr"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "lpm",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [9, 6, 2],
+          "actions" : ["MyIngress.ipv4_forward2", "MyIngress.drop", "NoAction"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyIngress.ipv4_forward2" : null,
+            "MyIngress.drop" : null,
+            "NoAction" : null
+          },
+          "default_entry" : {
+            "action_id" : 6,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.ipv4_lpm",
+          "id" : 20,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 254,
+            "column" : 10,
+            "source_fragment" : "ipv4_lpm"
+          },
+          "key" : [
+            {
+              "match_type" : "lpm",
+              "name" : "hdr.ipv4.dstAddr",
+              "target" : ["ipv4", "dstAddr"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "lpm",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [7, 4, 0],
+          "actions" : ["MyIngress.ipv4_forward", "MyIngress.drop", "NoAction"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyIngress.ipv4_forward" : null,
+            "MyIngress.drop" : null,
+            "NoAction" : null
+          },
+          "default_entry" : {
+            "action_id" : 4,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        }
+      ],
+      "action_profiles" : [],
+      "conditionals" : [
+        {
+          "name" : "node_2",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 317,
+            "column" : 12,
+            "source_fragment" : "hdr.arp.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["arp", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "node_3",
+          "false_next" : "tbl_link_monitor349"
+        },
+        {
+          "name" : "node_3",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 320,
+            "column" : 16,
+            "source_fragment" : "hdr.arp.target_ip == 0x0aa8c651"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["arp", "target_ip"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x0aa8c651"
+              }
+            }
+          },
+          "true_next" : "tbl_link_monitor323",
+          "false_next" : "node_5"
+        },
+        {
+          "name" : "node_5",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 332,
+            "column" : 21,
+            "source_fragment" : "hdr.arp.target_ip == 0x0aa8c750"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["arp", "target_ip"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x0aa8c750"
+              }
+            }
+          },
+          "false_next" : null,
+          "true_next" : "tbl_link_monitor335"
+        },
+        {
+          "name" : "node_8",
+          "id" : 3,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 353,
+            "column" : 24,
+            "source_fragment" : "hdr.probe.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["probe", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "tbl_link_monitor353",
+          "false_next" : "tbl_link_monitor353_0"
+        },
+        {
+          "name" : "node_12",
+          "id" : 4,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 362,
+            "column" : 15,
+            "source_fragment" : "meta.threshold1==0"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "userMetadata._threshold14"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00000000"
+              }
+            }
+          },
+          "true_next" : "tbl_link_monitor364",
+          "false_next" : "MyIngress.swid"
+        },
+        {
+          "name" : "node_15",
+          "id" : 5,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 370,
+            "column" : 16,
+            "source_fragment" : "hdr.probe.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["probe", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "tbl_link_monitor372",
+          "false_next" : "node_19"
+        },
+        {
+          "name" : "node_17",
+          "id" : 6,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 374,
+            "column" : 19,
+            "source_fragment" : "hdr.probe.learn == 1"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["probe", "learn"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x01"
+              }
+            }
+          },
+          "false_next" : null,
+          "true_next" : "tbl_link_monitor376"
+        },
+        {
+          "name" : "node_19",
+          "id" : 7,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 379,
+            "column" : 21,
+            "source_fragment" : "hdr.ipv4.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["ipv4", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "tbl_link_monitor382",
+          "false_next" : "MyIngress.ipv4_lpm"
+        },
+        {
+          "name" : "node_21",
+          "id" : 8,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 386,
+            "column" : 19,
+            "source_fragment" : "meta.threshold1<=50"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "<=",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "userMetadata._threshold14"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00000032"
+              }
+            }
+          },
+          "true_next" : "tbl_link_monitor388",
+          "false_next" : "tbl_link_monitor392"
+        },
+        {
+          "name" : "node_24",
+          "id" : 9,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 394,
+            "column" : 19,
+            "source_fragment" : "meta.tempcount<twop"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "<",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "userMetadata._tempcount3"]
+              },
+              "right" : {
+                "type" : "field",
+                "value" : ["scalars", "twop_0"]
+              }
+            }
+          },
+          "true_next" : "node_25",
+          "false_next" : "node_28"
+        },
+        {
+          "name" : "node_25",
+          "id" : 10,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 396,
+            "column" : 23,
+            "source_fragment" : "cg==0"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "cg_0"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00000000"
+              }
+            }
+          },
+          "true_next" : "tbl_link_monitor398",
+          "false_next" : "tbl_link_monitor406"
+        },
+        {
+          "name" : "node_28",
+          "id" : 11,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 413,
+            "column" : 24,
+            "source_fragment" : "meta.threshold1>50&&meta.tempcount<meta.threshold1"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "and",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : ">",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "userMetadata._threshold14"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x00000032"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "<",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "userMetadata._tempcount3"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "userMetadata._threshold14"]
+                  }
+                }
+              }
+            }
+          },
+          "true_next" : "tbl_link_monitor415",
+          "false_next" : "node_30"
+        },
+        {
+          "name" : "node_30",
+          "id" : 12,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 418,
+            "column" : 24,
+            "source_fragment" : "meta.tempcount<(meta.threshold2-meta.threshold1)"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "<",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "userMetadata._tempcount3"]
+              },
+              "right" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "-",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata._threshold25"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata._threshold14"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          },
+          "true_next" : "tbl_link_monitor420",
+          "false_next" : "node_32"
+        },
+        {
+          "name" : "node_32",
+          "id" : 13,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 423,
+            "column" : 19,
+            "source_fragment" : "(meta.tempcount+twop)>= meta.threshold2"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : ">=",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata._tempcount3"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "twop_0"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "field",
+                "value" : ["scalars", "userMetadata._threshold25"]
+              }
+            }
+          },
+          "true_next" : "tbl_link_monitor425",
+          "false_next" : "node_34"
+        },
+        {
+          "name" : "node_34",
+          "id" : 14,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 428,
+            "column" : 19,
+            "source_fragment" : "meta.tempport == 1"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "userMetadata._tempport2"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x0001"
+              }
+            }
+          },
+          "true_next" : "MyIngress.ipv4_lpm1",
+          "false_next" : "MyIngress.ipv4_lpm2"
+        }
+      ]
+    },
+    {
+      "name" : "egress",
+      "id" : 1,
+      "source_info" : {
+        "filename" : "link_monitor.p4",
+        "line" : 449,
+        "column" : 8,
+        "source_fragment" : "MyEgress"
+      },
+      "init_table" : "tbl_link_monitor466",
+      "tables" : [
+        {
+          "name" : "tbl_link_monitor466",
+          "id" : 21,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 466,
+            "column" : 8,
+            "source_fragment" : "encontpkts.read(encontpp, (bit<32>)standard_metadata.egress_port); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [30],
+          "actions" : ["link_monitor466"],
+          "base_default_next" : "node_41",
+          "next_tables" : {
+            "link_monitor466" : "node_41"
+          },
+          "default_entry" : {
+            "action_id" : 30,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor469",
+          "id" : 22,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 469,
+            "column" : 21,
+            "source_fragment" : "(hdr.probe.isValid()) ? 0 : encontpp"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [28],
+          "actions" : ["link_monitor469"],
+          "base_default_next" : "tbl_link_monitor470",
+          "next_tables" : {
+            "link_monitor469" : "tbl_link_monitor470"
+          },
+          "default_entry" : {
+            "action_id" : 28,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor469_0",
+          "id" : 23,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 469,
+            "column" : 21,
+            "source_fragment" : "(hdr.probe.isValid()) ? 0 : encontpp"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [29],
+          "actions" : ["link_monitor469_0"],
+          "base_default_next" : "tbl_link_monitor470",
+          "next_tables" : {
+            "link_monitor469_0" : "tbl_link_monitor470"
+          },
+          "default_entry" : {
+            "action_id" : 29,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor470",
+          "id" : 24,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 470,
+            "column" : 8,
+            "source_fragment" : "encontpkts.write((bit<32>)standard_metadata.egress_port, new_encont); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [33],
+          "actions" : ["link_monitor470"],
+          "base_default_next" : "node_45",
+          "next_tables" : {
+            "link_monitor470" : "node_45"
+          },
+          "default_entry" : {
+            "action_id" : 33,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor481",
+          "id" : 25,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 481,
+            "column" : 23,
+            "source_fragment" : "(hdr.probe.isValid()) ? 0 : byte_cnt"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [31],
+          "actions" : ["link_monitor481"],
+          "base_default_next" : "tbl_link_monitor482",
+          "next_tables" : {
+            "link_monitor481" : "tbl_link_monitor482"
+          },
+          "default_entry" : {
+            "action_id" : 31,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor481_0",
+          "id" : 26,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 481,
+            "column" : 23,
+            "source_fragment" : "(hdr.probe.isValid()) ? 0 : byte_cnt"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [32],
+          "actions" : ["link_monitor481_0"],
+          "base_default_next" : "tbl_link_monitor482",
+          "next_tables" : {
+            "link_monitor481_0" : "tbl_link_monitor482"
+          },
+          "default_entry" : {
+            "action_id" : 32,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor482",
+          "id" : 27,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 482,
+            "column" : 8,
+            "source_fragment" : "byte_cnt_reg.write((bit<32>)standard_metadata.egress_port, new_byte_cnt)"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [38],
+          "actions" : ["link_monitor482"],
+          "base_default_next" : "node_49",
+          "next_tables" : {
+            "link_monitor482" : "node_49"
+          },
+          "default_entry" : {
+            "action_id" : 38,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor487",
+          "id" : 28,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 487,
+            "column" : 12,
+            "source_fragment" : "hdr.probe_data.push_front(1); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [36],
+          "actions" : ["link_monitor487"],
+          "base_default_next" : "node_51",
+          "next_tables" : {
+            "link_monitor487" : "node_51"
+          },
+          "default_entry" : {
+            "action_id" : 36,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor491",
+          "id" : 29,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 491,
+            "column" : 38,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [34],
+          "actions" : ["link_monitor491"],
+          "base_default_next" : "tbl_link_monitor498",
+          "next_tables" : {
+            "link_monitor491" : "tbl_link_monitor498"
+          },
+          "default_entry" : {
+            "action_id" : 34,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor495",
+          "id" : 30,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 495,
+            "column" : 38,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [35],
+          "actions" : ["link_monitor495"],
+          "base_default_next" : "tbl_link_monitor498",
+          "next_tables" : {
+            "link_monitor495" : "tbl_link_monitor498"
+          },
+          "default_entry" : {
+            "action_id" : 35,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_link_monitor498",
+          "id" : 31,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 498,
+            "column" : 34,
+            "source_fragment" : "=(bit<7>)meta.sswid; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [37],
+          "actions" : ["link_monitor498"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "link_monitor498" : null
+          },
+          "default_entry" : {
+            "action_id" : 37,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        }
+      ],
+      "action_profiles" : [],
+      "conditionals" : [
+        {
+          "name" : "node_41",
+          "id" : 15,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 469,
+            "column" : 22,
+            "source_fragment" : "hdr.probe.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["probe", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "tbl_link_monitor469",
+          "false_next" : "tbl_link_monitor469_0"
+        },
+        {
+          "name" : "node_45",
+          "id" : 16,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 481,
+            "column" : 24,
+            "source_fragment" : "hdr.probe.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["probe", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "tbl_link_monitor481",
+          "false_next" : "tbl_link_monitor481_0"
+        },
+        {
+          "name" : "node_49",
+          "id" : 17,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 484,
+            "column" : 12,
+            "source_fragment" : "hdr.probe.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["probe", "$valid$"]
+              }
+            }
+          },
+          "false_next" : null,
+          "true_next" : "tbl_link_monitor487"
+        },
+        {
+          "name" : "node_51",
+          "id" : 18,
+          "source_info" : {
+            "filename" : "link_monitor.p4",
+            "line" : 489,
+            "column" : 16,
+            "source_fragment" : "hdr.probe.hop_cnt == 1"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["probe", "hop_cnt"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x01"
+              }
+            }
+          },
+          "true_next" : "tbl_link_monitor491",
+          "false_next" : "tbl_link_monitor495"
+        }
+      ]
+    }
+  ],
+  "checksums" : [
+    {
+      "name" : "cksum",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "link_monitor.p4",
+        "line" : 522,
+        "column" : 8,
+        "source_fragment" : "update_checksum( ..."
+      },
+      "target" : ["ipv4", "hdrChecksum"],
+      "type" : "generic",
+      "calculation" : "calc",
+      "verify" : false,
+      "update" : true,
+      "if_cond" : {
+        "type" : "expression",
+        "value" : {
+          "op" : "d2b",
+          "left" : null,
+          "right" : {
+            "type" : "field",
+            "value" : ["ipv4", "$valid$"]
+          }
+        }
+      }
+    }
+  ],
+  "force_arith" : [],
+  "extern_instances" : [],
+  "field_aliases" : [
+    [
+      "queueing_metadata.enq_timestamp",
+      ["standard_metadata", "enq_timestamp"]
+    ],
+    [
+      "queueing_metadata.enq_qdepth",
+      ["standard_metadata", "enq_qdepth"]
+    ],
+    [
+      "queueing_metadata.deq_timedelta",
+      ["standard_metadata", "deq_timedelta"]
+    ],
+    [
+      "queueing_metadata.deq_qdepth",
+      ["standard_metadata", "deq_qdepth"]
+    ],
+    [
+      "intrinsic_metadata.ingress_global_timestamp",
+      ["standard_metadata", "ingress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.egress_global_timestamp",
+      ["standard_metadata", "egress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.mcast_grp",
+      ["standard_metadata", "mcast_grp"]
+    ],
+    [
+      "intrinsic_metadata.egress_rid",
+      ["standard_metadata", "egress_rid"]
+    ],
+    [
+      "intrinsic_metadata.priority",
+      ["standard_metadata", "priority"]
+    ]
+  ],
+  "program" : "./link_monitor.p4i",
+  "__meta__" : {
+    "version" : [2, 23],
+    "compiler" : "https://github.com/p4lang/p4c"
+  }
+}

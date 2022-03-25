@@ -1,0 +1,51 @@
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: RuntimeCmd: Adding entry to exact match table MyIngress.swid
+match key:           
+action:              set_swid
+runtime data:        01
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to exact match table MyIngress.swid
+match key:           
+action:              set_swid
+runtime data:        01
+Invalid table operation (DUPLICATE_ENTRY)
+RuntimeCmd: Adding entry to lpm match table MyIngress.ipv4_lpm
+match key:           LPM-0a:a8:c7:50/32
+action:              ipv4_forward
+runtime data:        d8:cb:8a:a6:78:9d	00:01
+Entry has been added with handle 0
+RuntimeCmd: Error: Table MyIngress.ipv4_lpm needs 1 key fields
+RuntimeCmd: Error: Table MyIngress.ipv4_lpm needs 1 key fields
+RuntimeCmd: Adding entry to lpm match table MyIngress.ipv4_lpm1
+match key:           LPM-0a:a8:c7:50/32
+action:              ipv4_forward1
+runtime data:        d8:cb:8a:a6:78:9d	00:01
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to lpm match table MyIngress.ipv4_lpm1
+match key:           LPM-0a:a8:c6:51/32
+action:              ipv4_forward1
+runtime data:        b0:26:28:9c:e3:8d	00:02
+Entry has been added with handle 1
+RuntimeCmd: Adding entry to lpm match table MyIngress.ipv4_lpm1
+match key:           LPM-0a:a8:c6:51/32
+action:              ipv4_forward1
+runtime data:        b0:26:28:9c:e3:8d	00:02
+Invalid table operation (DUPLICATE_ENTRY)
+RuntimeCmd: Adding entry to lpm match table MyIngress.ipv4_lpm2
+match key:           LPM-0a:a8:c7:50/32
+action:              ipv4_forward2
+runtime data:        d8:cb:8a:a6:78:9d	00:01
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to lpm match table MyIngress.ipv4_lpm2
+match key:           LPM-0a:a8:c6:51/32
+action:              ipv4_forward2
+runtime data:        b0:26:28:9c:ea:43	00:03
+Entry has been added with handle 1
+RuntimeCmd: Adding entry to lpm match table MyIngress.ipv4_lpm2
+match key:           LPM-0a:a8:c6:51/32
+action:              ipv4_forward2
+runtime data:        b0:26:28:9c:ea:43	00:03
+Invalid table operation (DUPLICATE_ENTRY)
+RuntimeCmd: 

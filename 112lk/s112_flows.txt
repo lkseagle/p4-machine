@@ -1,0 +1,74 @@
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: RuntimeCmd: Adding entry to exact match table MyIngress.swid
+match key:           
+action:              set_swid
+runtime data:        06
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to exact match table MyIngress.swid
+match key:           
+action:              set_swid
+runtime data:        06
+Invalid table operation (DUPLICATE_ENTRY)
+RuntimeCmd: Adding entry to lpm match table MyIngress.ipv4_lpm
+match key:           LPM-0a:a8:c7:50/32
+action:              ipv4_forward
+runtime data:        34:48:ed:f8:f3:07	00:01
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to lpm match table MyIngress.ipv4_lpm
+match key:           LPM-0a:a8:c6:51/32
+action:              ipv4_forward
+runtime data:        34:48:ed:f8:f1:36	00:03
+Entry has been added with handle 1
+RuntimeCmd: Adding entry to lpm match table MyIngress.ipv4_lpm
+match key:           LPM-0a:a8:c6:52/32
+action:              ipv4_forward
+runtime data:        34:48:ed:f8:f1:36	00:03
+Entry has been added with handle 2
+RuntimeCmd: Adding entry to lpm match table MyIngress.ipv4_lpm
+match key:           LPM-0a:a8:c6:52/32
+action:              ipv4_forward
+runtime data:        34:48:ed:f8:f1:36	00:03
+Invalid table operation (DUPLICATE_ENTRY)
+RuntimeCmd: Adding entry to lpm match table MyIngress.ipv4_lpm1
+match key:           LPM-0a:a8:c7:50/32
+action:              ipv4_forward1
+runtime data:        34:48:ed:f8:f3:07	00:01
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to lpm match table MyIngress.ipv4_lpm1
+match key:           LPM-0a:a8:c6:51/32
+action:              ipv4_forward1
+runtime data:        34:48:ed:f8:f1:36	00:03
+Entry has been added with handle 1
+RuntimeCmd: Adding entry to lpm match table MyIngress.ipv4_lpm1
+match key:           LPM-0a:a8:c6:52/32
+action:              ipv4_forward1
+runtime data:        34:48:ed:f8:f1:36	00:03
+Entry has been added with handle 2
+RuntimeCmd: Adding entry to lpm match table MyIngress.ipv4_lpm1
+match key:           LPM-0a:a8:c6:52/32
+action:              ipv4_forward1
+runtime data:        34:48:ed:f8:f1:36	00:03
+Invalid table operation (DUPLICATE_ENTRY)
+RuntimeCmd: Adding entry to lpm match table MyIngress.ipv4_lpm2
+match key:           LPM-0a:a8:c7:50/32
+action:              ipv4_forward2
+runtime data:        34:48:ed:f8:f2:8f	00:02
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to lpm match table MyIngress.ipv4_lpm2
+match key:           LPM-0a:a8:c6:51/32
+action:              ipv4_forward2
+runtime data:        34:48:ed:f8:f1:36	00:03
+Entry has been added with handle 1
+RuntimeCmd: Adding entry to lpm match table MyIngress.ipv4_lpm2
+match key:           LPM-0a:a8:c6:52/32
+action:              ipv4_forward2
+runtime data:        34:48:ed:f8:f1:36	00:03
+Entry has been added with handle 2
+RuntimeCmd: Adding entry to lpm match table MyIngress.ipv4_lpm2
+match key:           LPM-0a:a8:c6:52/32
+action:              ipv4_forward2
+runtime data:        34:48:ed:f8:f1:36	00:03
+Invalid table operation (DUPLICATE_ENTRY)
+RuntimeCmd: 
